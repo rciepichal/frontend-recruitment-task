@@ -2,6 +2,7 @@ const showBtn = document.querySelector('#counterBtn');
 const resetBtn = document.querySelector('#resetCountBtn');
 const spanText = document.querySelector('#counterText');
 const modal = document.querySelector('#modalContent');
+const modalAlert = document.querySelector('.section__alert');
 const icon = document.querySelector('#closeIcon');
 let count = 0;
 (function () {
@@ -11,10 +12,16 @@ let count = 0;
 })();
 
 const showModal = () => {
-  modal.style.display = 'flex';
+  modalAlert.classList.remove('hide');
+  modal.classList.remove('hide');
+  modal.classList.add('show');
+  modalAlert.classList.add('show');
 };
 const hideModal = () => {
-  modal.style.display = 'none';
+  modalAlert.classList.add('hide');
+  modal.classList.add('hide');
+  modalAlert.classList.remove('show');
+  modal.classList.remove('show');
 };
 const counter = () => {
   count += 1;
@@ -52,6 +59,6 @@ icon.addEventListener('click', () => hideModal());
 
 window.addEventListener('click', (e) => {
   if (e.target == modal) {
-    modal.style.display = 'none';
+    hideModal();
   }
 });
