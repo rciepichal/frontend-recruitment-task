@@ -21,16 +21,18 @@
           Infinitely scalable, feature-rich and cloud-native data management and protection for modern and legacy
           infrastructures and SaaS platforms, managed via a single app with no hardware required.
         </p>
-        <button type="button" class="section__btn" id="">Button</button>
+        <button type="button" class="section__btn" id="counterBtn">Button</button>
       </article>
       <div class="section__modal" id="modalContent">
         <div class="section__alert">
-          <i class="fa-solid fa-x alert__icon"></i>
+          <i class="fa-solid fa-x alert__icon" id="closeIcon"></i>
           <h3 class="alert__title">Alert!</h3>
-          <p class="alert__text">You have clicked <span>X times</span> to related button.</p>
+          <p class="alert__text">You have clicked <span id="counterText">X times</span> to related button.</p>
+          <button type="button" class="alert__button" id="resetCountBtn">Reset Counter</button>
         </div>
       </div>
     </section>
     <script src="https://kit.fontawesome.com/5228e9581e.js" crossorigin="anonymous"></script>
+    <script async defer src="./dist/all.js"></script>
   </body>
 </html>
