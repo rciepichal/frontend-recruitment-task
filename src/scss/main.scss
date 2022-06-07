@@ -35,6 +35,8 @@ body {
     }
     .section__text {
       color: $dark1;
+      font-weight: 300;
+      line-height: 1.5rem;
     }
     .section__btn {
       margin: 2rem auto;
@@ -48,6 +50,37 @@ body {
       transition: all 0.3s linear;
       &:hover {
         background-color: $btnSecondary;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .section {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1rem 3rem;
+    max-width: 1440px;
+    &__figure {
+      margin: 1rem auto;
+
+      .section__img {
+        content: url('/frontend-recruitment-task/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_450.jpg');
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .section {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1rem 3rem;
+    max-width: 1440px;
+    &__figure {
+      margin: 1rem auto;
+      .section__img {
+        content: url('/frontend-recruitment-task/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_480.jpg');
       }
     }
   }
