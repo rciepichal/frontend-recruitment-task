@@ -3,6 +3,7 @@ $darkModal: #12121280;
 $white: #fff;
 $btnPrimary: #e4c1ae;
 $btnSecondary: #e59468;
+$even: #e2d1c7;
 
 @mixin flexColumn {
   display: flex;
@@ -110,6 +111,9 @@ body {
           background-color: $btnSecondary;
         }
       }
+      .alert__users {
+        display: none;
+      }
     }
   }
 }
@@ -120,6 +124,9 @@ body {
   visibility: visible;
   display: flex;
   animation: modalShow 0.3s linear;
+}
+.even {
+  background-color: $even;
 }
 
 @media only screen and (min-width: 768px) {
@@ -139,6 +146,18 @@ body {
         .alert__icon {
           top: 30px;
           right: 30px;
+        }
+        .alert__users {
+          display: flex;
+          margin: 1rem auto;
+          font-size: 10px;
+          .users__loader {
+            font-size: 16px;
+            animation: loading 1s linear infinite;
+          }
+          .users__table {
+            display: none;
+          }
         }
       }
     }
@@ -169,18 +188,25 @@ body {
       .section__alert {
         width: 920px;
         min-height: 210px;
-        padding: 56px 445px 0px 95px;
-      }
-      .alert__icon {
-        top: 30px;
-        right: 30px;
-      }
-      .alert__title {
-        padding-bottom: 1.5rem;
-      }
-      .alert__button {
-        width: 15rem;
-        margin: 1rem;
+        // padding: 56px 445px 0px 95px;
+        .alert__icon {
+          top: 30px;
+          right: 30px;
+        }
+        .alert__title {
+          padding-bottom: 1.5rem;
+        }
+        .alert__button {
+          width: 15rem;
+          margin: 1rem;
+        }
+        .alert__users {
+          margin: auto;
+          font-size: 12px;
+          .users__loader {
+            font-size: 20px;
+          }
+        }
       }
     }
   }
@@ -191,6 +217,18 @@ body {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
